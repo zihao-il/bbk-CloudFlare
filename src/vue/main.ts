@@ -5,7 +5,7 @@ import {createPinia} from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import {useThemeStore} from "./store/theme.js";
 import {createI18nInstance} from './locale'
-import '@varlet/ui/es/action-sheet/style/index'
+import '@varlet/ui/es/action-sheet/style/index.mjs'
 
 const app = createApp(App);
 const pinia = createPinia()

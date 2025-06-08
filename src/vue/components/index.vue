@@ -32,7 +32,7 @@ const show = ref<boolean>(true)
 const NewRelease = ref<string>("")
 const NewBeta = ref<string>("")
 
-async function getMcData(d: Record<string, any>, b = false, s = false): Promise<void> {
+async function getMcData(d: any, b = false, s = false): Promise<void> {
     let vData: McItem[] = []
 
     if (s) {
@@ -226,11 +226,14 @@ async function createSheet(li: McItem, vv: string): Promise<void> {
     //     delete d["OneDrive_365"]
     // }
 
-    const keys = Object.keys(d).reverse()
-    const transformedKeys = keys.map(key => ({
-        name: key,
-        icon: "download",
-    }))
+    const keys = Object.keys(d);
+    keys.reverse();
+    const transformedKeys = keys.map(key => {
+        return {
+            name: key,
+            icon: 'download'
+        };
+    });
 
     const action = await ActionSheet({
         actions: transformedKeys,
