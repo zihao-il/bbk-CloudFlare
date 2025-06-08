@@ -26,7 +26,7 @@ app.post('/get_version', async (c) => {
         sql += ` ORDER BY update_time DESC, version_all DESC`;
         const {results} = await db.prepare(sql).all();
         return c.json({status: 200, message: results});
-    } catch (e) {
+    } catch (e: any) {
         return c.json({status: 201, message: e.toString()}, 500);
     }
 })
@@ -59,8 +59,8 @@ app.get('/search_version', async (c) => {
         const {results} = await db.prepare(sql).bind(...params).all();
 
         return c.json({status: 200, message: results});
-    } catch (error) {
-        return c.json({status: 201, message: error.toString()}, 500);
+    } catch (e: any) {
+        return c.json({status: 201, message: e.toString()}, 500);
     }
 });
 
