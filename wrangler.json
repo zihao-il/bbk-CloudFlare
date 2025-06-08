@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bbk-worker-a",
+  "main": "./src/worker/index.ts",
+  "compatibility_date": "2025-05-25",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "8a2d4390-6416-4648-8e90-ed3e035f122f",
+      "database_name": "mcdb"
+    }
+  ],
+  "assets": {
+    "not_found_handling": "single-page-application"
+  }
+}
